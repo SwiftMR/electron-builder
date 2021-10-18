@@ -1,3 +1,7 @@
+# [](https://github.com/SwiftMR/electron-builder/compare/v22.14.5...v) (2021-10-18)
+
+
+
 # [](https://github.com/electron-userland/electron-builder/compare/v22.14.4...v) (2021-10-13)
 
 

@@ -1,6 +1,6 @@
 {
-  "name": "@electron-builder/monorepo",
-  "private": true,
+  "name": "@swiftmr/electron-builder",
+  "version": "1.0.0",
   "license": "MIT",
   "lint-staged": {
     "packages/**/*.ts": "eslint",
@@ -34,7 +34,7 @@
     "update-deps": "pnpm update -i -r --latest"
   },
   "//": "repository must be specified otherwise conventional-changelog will use forked repo (currently cloned)",
-  "repository": "https://github.com/electron-userland/electron-builder",
+  "repository": "git+https://github.com/SwiftMR/electron-builder",
   "///": "All dependencies for all packages (hoisted)",
   "////": "All typings are added into root `package.json` to avoid duplication errors in the IDE compiler (several `node.d.ts` files).",
   "dependencies": {
@@ -72,5 +72,8 @@
   "engines": {
     "node": ">=14",
     "pnpm": ">=6"
+  },
+  "publishConfig": {
+      "registry": "https://registry.npmjs.org"
   }
 }
