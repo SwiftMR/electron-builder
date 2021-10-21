@@ -1,7 +1,8 @@
 {
-  "name": "app-builder-lib",
+  "name": "@swiftmr/app-builder-lib",
   "description": "electron-builder lib",
-  "version": "22.14.5",
+  "version": "1.0.0",
+  "app-builder-lib-public-version": "22.14.5",
   "main": "out/index.js",
   "files": [
     "out",
@@ -12,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron-userland/electron-builder.git",
+    "url": "git+https://github.com/SwiftMR/electron-builder",
     "directory": "packages/app-builder-lib"
   },
   "engines": {
@@ -42,7 +43,7 @@
     "flatpak",
     "portable"
   ],
-  "author": "Vladimir Krivosheev",
+  "author": "Taehyun Hwang",
   "license": "MIT",
   "bugs": "https://github.com/electron-userland/electron-builder/issues",
   "homepage": "https://github.com/electron-userland/electron-builder",

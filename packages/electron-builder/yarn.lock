@@ -48,6 +48,37 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
+"@swiftmr/app-builder-lib@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@swiftmr/app-builder-lib/-/app-builder-lib-1.0.0.tgz#7420628f34f8b8dd1b508f7887f50d6861217e9c"
+  integrity sha512-S2zbpG5O7fscXD0qSqKlSVDy9I5nsRviX8wPsrhma6h61dc25iJuamseboNgRGni3a5DTx1swfOCgnaoVAPOpQ==
+  dependencies:
+    "7zip-bin" "~5.1.1"
+    "@develar/schema-utils" "~2.6.5"
+    "@electron/universal" "1.0.5"
+    "@malept/flatpak-bundler" "^0.4.0"
+    async-exit-hook "^2.0.1"
+    bluebird-lst "^1.0.9"
+    builder-util "workspace:*"
+    builder-util-runtime "workspace:*"
+    chromium-pickle-js "^0.2.0"
+    debug "^4.3.2"
+    ejs "^3.1.6"
+    electron-osx-sign "^0.5.0"
+    electron-publish "workspace:*"
+    form-data "^4.0.0"
+    fs-extra "^10.0.0"
+    hosted-git-info "^4.0.2"
+    is-ci "^3.0.0"
+    isbinaryfile "^4.0.8"
+    js-yaml "^4.1.0"
+    lazy-val "^1.0.5"
+    minimatch "^3.0.4"
+    read-config-file "6.2.0"
+    sanitize-filename "^1.6.3"
+    semver "^7.3.5"
+    temp-file "^3.4.0"
+
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@szmarczak/http-timer/-/http-timer-1.1.2.tgz#b1665e2c461a2cd92f4c1bbf50d5454de0d4b421"
@@ -195,7 +226,7 @@ app-builder-bin@3.7.1:
   resolved "https://registry.yarnpkg.com/app-builder-bin/-/app-builder-bin-3.7.1.tgz#cb0825c5e12efc85b196ac3ed9c89f076c61040e"
   integrity sha512-ql93vEUq6WsstGXD+SBLSIQw6SNnhbDEM0swzgugytMxLp3rT24Ag/jcC80ZHxiPRTdew1niuR7P3/FCrDqIjw==
 
-app-builder-lib@22.14.5, "app-builder-lib@workspace:*":
+app-builder-lib@22.14.5:
   version "22.14.5"
   resolved "https://registry.yarnpkg.com/app-builder-lib/-/app-builder-lib-22.14.5.tgz#a61a50b132b858e98fdc70b6b88994ae99b4f96d"
   integrity sha512-k3VwKP4kpsnUaXoUkm1s4zaSHPHIMFnN4kPMU9yXaKmE1LfHHqBaEah5bXeTAX5V/BC41wFdg8CF5vOjvgy8Rg==
@@ -695,7 +726,7 @@ electron-osx-sign@^0.5.0:
     minimist "^1.2.0"
     plist "^3.0.1"
 
-electron-publish@22.14.5:
+electron-publish@22.14.5, "electron-publish@workspace:*":
   version "22.14.5"
   resolved "https://registry.yarnpkg.com/electron-publish/-/electron-publish-22.14.5.tgz#34bcdce671f0e651330db20040d6919c77c94bd6"
   integrity sha512-h+NANRdaA0PqGF15GKvorseWPzh1PXa/zx4I37//PIokW8eKIov8ky23foUSb55ZFWUHGpxQJux7y2NCfBtQeg==

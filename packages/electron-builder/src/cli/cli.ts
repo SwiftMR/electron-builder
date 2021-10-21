@@ -1,8 +1,6 @@
-#! /usr/bin/env node
-
 import { InvalidConfigurationError, log } from "builder-util"
 import * as chalk from "chalk"
-import { getElectronVersion } from "app-builder-lib/out/electron/electronVersion"
+import { getElectronVersion } from "@swiftmr/app-builder-lib/out/electron/electronVersion"
 import { pathExists, readJson } from "fs-extra"
 import * as isCi from "is-ci"
 import * as path from "path"
@@ -13,7 +11,7 @@ import { build, configureBuildCommand, createYargs } from "../builder"
 import { createSelfSignedCert } from "./create-self-signed-cert"
 import { configureInstallAppDepsCommand, installAppDeps } from "./install-app-deps"
 import { start } from "./start"
-import { nodeGypRebuild } from "app-builder-lib/out/util/yarn"
+import { nodeGypRebuild } from "@swiftmr/app-builder-lib/out/util/yarn"
 
 // tslint:disable:no-unused-expression
 void createYargs()

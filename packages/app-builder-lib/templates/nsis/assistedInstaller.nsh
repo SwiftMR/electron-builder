@@ -32,19 +32,19 @@
     # sanitize the MUI_PAGE_DIRECTORY result to make sure it has a application name sub-folder
     Function instFilesPre
       ${If} ${FileExists} "$INSTDIR\*"
-        ${StrContains} $0 "${APP_FILENAME}" $INSTDIR
-        ${If} $0 == ""
+        ${StrStr} $0 "${APP_FILENAME}" $INSTDIR
+        ${If} $0 != ${APP_FILENAME}
           StrCpy $INSTDIR "$INSTDIR\${APP_FILENAME}"
         ${endIf}
       ${endIf}
     FunctionEnd
   !endif
-  
+
   # after change installation directory and before install start, you can show custom page here.
   !ifmacrodef customPageAfterChangeDir
     !insertmacro customPageAfterChangeDir
   !endif
-  
+
   !insertmacro MUI_PAGE_INSTFILES
   !ifmacrodef customFinishPage
     !insertmacro customFinishPage
