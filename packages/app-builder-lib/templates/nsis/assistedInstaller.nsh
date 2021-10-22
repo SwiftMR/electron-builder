@@ -29,6 +29,10 @@
     # so, we use instfiles pre
     !define MUI_PAGE_CUSTOMFUNCTION_PRE instFilesPre
 
+    # StrStr function must be called with no parameter before used in section and function
+    # ref: https://nsis.sourceforge.io/StrFunc
+    ${StrStr}
+
     # sanitize the MUI_PAGE_DIRECTORY result to make sure it has a application name sub-folder
     Function instFilesPre
       ${If} ${FileExists} "$INSTDIR\*"

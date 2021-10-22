@@ -1,7 +1,7 @@
 {
   "name": "@swiftmr/electron-builder",
   "description": "A complete solution to package and build a ready for distribution Electron app for MacOS, Windows and Linux with “auto update” support out of the box",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "electron-builder-public-version": "22.14.5",
   "main": "out/index.js",
   "files": [
@@ -51,8 +51,8 @@
   "bugs": "https://github.com/electron-userland/electron-builder/issues",
   "homepage": "https://github.com/electron-userland/electron-builder",
   "dependencies": {
+    "@swiftmr/app-builder-lib": "1.0.2",
     "@types/yargs": "^17.0.1",
-    "@swiftmr/app-builder-lib": "1.0.0",
     "builder-util": "workspace:*",
     "builder-util-runtime": "workspace:*",
     "chalk": "^4.1.1",
