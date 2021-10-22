@@ -4,8 +4,6 @@
   "license": "MIT",
   "lint-staged": {
     "packages/**/*.ts": "eslint",
-    "**/package.json": "pnpm lint-deps",
-    "test/src/helpers/checkDeps.ts": "pnpm lint-deps",
     "docs/**/*": "pnpm generate-docs"
   },
   "scripts": {
