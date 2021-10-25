@@ -20,7 +20,7 @@
   !endif
 
   !ifdef allowToChangeInstallationDirectory
-    !include StrContains.nsh
+    !include WordFunc.nsh
 
     !insertmacro skipPageIfUpdated
     !insertmacro MUI_PAGE_DIRECTORY
@@ -31,17 +31,17 @@
 
     # StrStr function must be called with no parameter before used in section and function
     # ref: https://nsis.sourceforge.io/StrFunc
-    ${StrStr}
 
     # sanitize the MUI_PAGE_DIRECTORY result to make sure it has a application name sub-folder
     Function instFilesPre
       ${If} ${FileExists} "$INSTDIR\*"
-        ${StrStr} $0 "${APP_FILENAME}" $INSTDIR
-        ${If} $0 != ${APP_FILENAME}
+        ${WordFind} $INSTDIR "\" "-1" $R0
+        ${If} $R0 != ${APP_FILENAME}
           StrCpy $INSTDIR "$INSTDIR\${APP_FILENAME}"
         ${endIf}
       ${endIf}
     FunctionEnd
+
   !endif
 
   # after change installation directory and before install start, you can show custom page here.
