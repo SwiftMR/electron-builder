@@ -51,7 +51,7 @@
   "bugs": "https://github.com/electron-userland/electron-builder/issues",
   "homepage": "https://github.com/electron-userland/electron-builder",
   "dependencies": {
-    "@swiftmr/app-builder-lib": "1.0.5",
+    "@swiftmr/app-builder-lib": "1.0.6",
     "@types/yargs": "^17.0.1",
     "builder-util": "workspace:*",
     "builder-util-runtime": "workspace:*",
