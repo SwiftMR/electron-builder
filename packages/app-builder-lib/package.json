@@ -1,7 +1,7 @@
 {
   "name": "@swiftmr/app-builder-lib",
   "description": "electron-builder lib",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "app-builder-lib-public-version": "22.14.5",
   "main": "out/index.js",
   "files": [
