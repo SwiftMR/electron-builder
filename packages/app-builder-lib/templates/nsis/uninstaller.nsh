@@ -3,9 +3,8 @@ Function un.checkAppRunning
 FunctionEnd
 
 Function un.onInit
-  SetOutPath $INSTDIR
   ${LogSet} on
-  
+
   !insertmacro check64BitAndSetRegView
 
   ${If} ${Silent}
