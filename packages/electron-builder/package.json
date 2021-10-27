@@ -71,6 +71,6 @@
   },
   "typings": "./out/index.d.ts",
   "publishConfig": {
-    "tag": "next"
+    "tag": "latest"
   }
 }
