@@ -36,7 +36,7 @@
     Function instFilesPre
       ${If} ${FileExists} "$INSTDIR\*"
         ${WordFind} $INSTDIR "\" "-1" $R0
-        ${If} $R0 != ${APP_FILENAME}
+        ${If} $R0 S!= ${APP_FILENAME}
           StrCpy $INSTDIR "$INSTDIR\${APP_FILENAME}"
         ${endIf}
       ${endIf}
