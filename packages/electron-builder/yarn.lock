@@ -48,10 +48,10 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@swiftmr/app-builder-lib@1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@swiftmr/app-builder-lib/-/app-builder-lib-1.0.6.tgz#982e2d7656f2386afaef7d69e53930192ac02667"
-  integrity sha512-+955QPmtKBMmTeAuDJEpghgeclcc7NALQ+d64ditqfxjgHO8xenuF2o//BjpBXpJO5jgyWB3fzgnMoy0vkdf2g==
+"@swiftmr/app-builder-lib@1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@swiftmr/app-builder-lib/-/app-builder-lib-1.0.7.tgz#e69cf5aaee77a328ac218e30d592997c144f6f9c"
+  integrity sha512-18wc+oOnMsdUQDrOoyVfeWrA9F/+KD4CkG5+0jZlTp1gXTGuojfEhBK7mtv+uxMrvbJosozUkRpqJOI5UY7Szg==
   dependencies:
     "7zip-bin" "~5.1.1"
     "@develar/schema-utils" "~2.6.5"
