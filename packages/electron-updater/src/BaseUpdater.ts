@@ -24,6 +24,11 @@ export abstract class BaseUpdater extends AppUpdater {
     }
   }
 
+  justInstall(isSilent = false, isForceRunAfter = false): void {
+    this._logger.info(`Install on explicit justInstall`)
+    this.install(isSilent, isSilent ? isForceRunAfter : true)
+  }
+
   protected executeDownload(taskOptions: DownloadExecutorTask): Promise<Array<string>> {
     return super.executeDownload({
       ...taskOptions,

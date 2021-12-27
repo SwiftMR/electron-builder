@@ -473,6 +473,8 @@ export abstract class AppUpdater extends EventEmitter {
    */
   abstract quitAndInstall(isSilent?: boolean, isForceRunAfter?: boolean): void
 
+  abstract justInstall(isSilent?: boolean, isForceRunAfter?: boolean): void
+
   private async loadUpdateConfig(): Promise<any> {
     if (this._appUpdateConfigPath == null) {
       this._appUpdateConfigPath = this.app.appUpdateConfigPath
