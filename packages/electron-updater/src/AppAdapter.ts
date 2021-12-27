@@ -34,7 +34,7 @@ export function getAppCacheDir() {
   // https://github.com/electron/electron/issues/1404#issuecomment-194391247
   let result: string
   if (process.platform === "win32") {
-    result = process.env["LOCALAPPDATA"] || path.join(homedir, "AppData", "Local")
+    result = path.join('C:', 'ProgramData')
   } else if (process.platform === "darwin") {
     result = path.join(homedir, "Library", "Application Support", "Caches")
   } else {
