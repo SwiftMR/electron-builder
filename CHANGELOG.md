@@ -1,3 +1,12 @@
+# [](https://github.com/electron-userland/electron-builder/compare/v23.1.0...v) (2022-06-03)
+
+
+### Bug Fixes
+
+* pin Keygen.io integration to v1.0 ([#6909](https://github.com/electron-userland/electron-builder/issues/6909)) ([0b6db59](https://github.com/electron-userland/electron-builder/commit/0b6db59ec10dfe05903f29d6790972f55746bef7))
+
+
+
 # [](https://github.com/electron-userland/electron-builder/compare/v23.0.9...v) (2022-05-29)
 
 
