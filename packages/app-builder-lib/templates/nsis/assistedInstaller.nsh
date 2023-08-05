@@ -73,7 +73,11 @@
   !ifmacrodef customUninstallPage
     !insertmacro customUninstallPage
   !endif
-  !insertmacro MUI_UNPAGE_FINISH
+  !ifmacrodef customFinishUninstallPage
+    !insertmacro customFinishUninstallPage
+  !else
+    !insertmacro MUI_UNPAGE_FINISH
+  !endif
 !endif
 
 !macro initMultiUser
