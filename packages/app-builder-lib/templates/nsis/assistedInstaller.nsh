@@ -31,22 +31,38 @@
 
     # sanitize the MUI_PAGE_DIRECTORY result to make sure it has a application name sub-folder
     Function instFilesPre
-      ${If} ${FileExists} "$INSTDIR\*"
-        ${StrContains} $0 "${APP_FILENAME}" $INSTDIR
-        ${If} $0 == ""
-          StrCpy $INSTDIR "$INSTDIR\${APP_FILENAME}"
-        ${endIf}
+      ${StrContains} $0 "${APP_FILENAME}" $INSTDIR
+      ${If} $0 == ""
+        StrCpy $INSTDIR "$INSTDIR\${APP_FILENAME}"
       ${endIf}
     FunctionEnd
   !endif
-  
+
   # after change installation directory and before install start, you can show custom page here.
   !ifmacrodef customPageAfterChangeDir
     !insertmacro customPageAfterChangeDir
   !endif
+
+  !ifmacrodef customInstfilesPage
+    !insertmacro customInstfilesPage
+  !else
+    !insertmacro MUI_PAGE_INSTFILES
+  !endif
   
-  !insertmacro MUI_PAGE_INSTFILES
   !ifmacrodef customFinishPage
+    !ifndef HIDE_RUN_AFTER_FINISH
+      Function StartApp
+        ${if} ${isUpdated}
+          StrCpy $1 "--updated"
+        ${else}
+          StrCpy $1 ""
+        ${endif}
+        ${StdUtils.ExecShellAsUser} $0 "$launchLink" "open" "$1"
+      FunctionEnd
+
+      !define MUI_FINISHPAGE_RUN
+      !define MUI_FINISHPAGE_RUN_FUNCTION "StartApp"
+    !endif
     !insertmacro customFinishPage
   !else
     !ifndef HIDE_RUN_AFTER_FINISH
@@ -65,15 +81,25 @@
     !insertmacro MUI_PAGE_FINISH
   !endif
 !else
-  !insertmacro MUI_UNPAGE_WELCOME
+  !ifndef removeDefaultUninstallWelcomePage
+    !insertmacro MUI_UNPAGE_WELCOME
+  !endif
   !ifndef INSTALL_MODE_PER_ALL_USERS
     !insertmacro PAGE_INSTALL_MODE
   !endif
-  !insertmacro MUI_UNPAGE_INSTFILES
+  !ifmacrodef customUninstfilesPage
+    !insertmacro customUninstfilesPage
+  !else
+    !insertmacro MUI_UNPAGE_INSTFILES
+  !endif
   !ifmacrodef customUninstallPage
     !insertmacro customUninstallPage
   !endif
-  !insertmacro MUI_UNPAGE_FINISH
+  !ifmacrodef customFinishUninstallPage
+    !insertmacro customFinishUninstallPage
+  !else
+    !insertmacro MUI_UNPAGE_FINISH
+  !endif
 !endif
 
 !macro initMultiUser
