@@ -9,8 +9,8 @@ ShowInstDetails nevershow
 FileBufSize 64
 Name "${PRODUCT_NAME}"
 
-; !define APP_EXECUTABLE_FILENAME "${PRODUCT_FILENAME}.exe"
-; !define UNINSTALL_FILENAME "Uninstall ${PRODUCT_FILENAME}.exe"
+!define APP_EXECUTABLE_FILENAME "${PRODUCT_FILENAME}.exe"
+!define UNINSTALL_FILENAME "Uninstall ${PRODUCT_FILENAME}.exe"
 
 !macro setSpaceRequired SECTION_ID
   !ifdef APP_64_UNPACKED_SIZE
