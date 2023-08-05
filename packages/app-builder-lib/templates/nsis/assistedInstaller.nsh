@@ -43,7 +43,12 @@
     !insertmacro customPageAfterChangeDir
   !endif
 
-  !insertmacro MUI_PAGE_INSTFILES
+  !ifmacrodef customInstfilesPage
+    !insertmacro customInstfilesPage
+  !else
+    !insertmacro MUI_PAGE_INSTFILES
+  !endif
+  
   !ifmacrodef customFinishPage
     !ifndef HIDE_RUN_AFTER_FINISH
       Function StartApp
@@ -82,7 +87,11 @@
   !ifndef INSTALL_MODE_PER_ALL_USERS
     !insertmacro PAGE_INSTALL_MODE
   !endif
-  !insertmacro MUI_UNPAGE_INSTFILES
+  !ifmacrodef customUninstfilesPage
+    !insertmacro customUninstfilesPage
+  !else
+    !insertmacro MUI_UNPAGE_INSTFILES
+  !endif
   !ifmacrodef customUninstallPage
     !insertmacro customUninstallPage
   !endif
