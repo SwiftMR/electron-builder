@@ -183,7 +183,7 @@ export class MacUpdater extends AppUpdater {
     }
   }
 
-  justInstall(isSilent = false, isForceRunAfter = false): void {
+  justInstall(isSilent = false, isForceRunAfter = false, isAdminRightsRequired = false): void {
     throw new Error('Not implemented')
   }
 

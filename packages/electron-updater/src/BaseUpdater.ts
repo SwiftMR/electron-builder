@@ -24,9 +24,39 @@ export abstract class BaseUpdater extends AppUpdater {
     }
   }
 
-  justInstall(isSilent = false, isForceRunAfter = false): void {
+  justInstall(isSilent = false, isForceRunAfter = false, isAdminRightsRequired = false): void {
     this._logger.info(`Install on explicit justInstall`)
-    this.install(isSilent, isSilent ? isForceRunAfter : true)
+
+    // slightly modified this.install
+    if (this.quitAndInstallCalled) {
+      this._logger.warn("install call ignored: quitAndInstallCalled is set to true")
+      return
+    }
+
+    const downloadedUpdateHelper = this.downloadedUpdateHelper
+    const installerPath = downloadedUpdateHelper == null ? null : downloadedUpdateHelper.file
+    const downloadedFileInfo = downloadedUpdateHelper == null ? null : downloadedUpdateHelper.downloadedFileInfo
+    if (installerPath == null || downloadedFileInfo == null) {
+      this.dispatchError(new Error("No valid update available, can't quit and install"))
+      return
+    }
+
+    // prevent calling several times
+    this.quitAndInstallCalled = true
+
+    try {
+      this._logger.info(`Install: isSilent: ${isSilent}, isForceRunAfter: ${isForceRunAfter}`)
+      this.doInstall({
+        installerPath,
+        isSilent,
+        isForceRunAfter,
+        isAdminRightsRequired,
+      })
+      return
+    } catch (e) {
+      this.dispatchError(e)
+      return
+    }
   }
 
   protected executeDownload(taskOptions: DownloadExecutorTask): Promise<Array<string>> {
